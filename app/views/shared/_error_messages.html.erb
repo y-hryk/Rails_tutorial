@@ -1,6 +1,7 @@
 <% if @user.errors.any? %>
   <div id="error_explanation">
     <div class="alert alert-danger">
+      <!-- pluralize 引数に与えられた 数値を見て文字列を複数形に変更する -->
       The form contains <%= pluralize(@user.errors.count, "error") %>.
     </div>
     <ul>

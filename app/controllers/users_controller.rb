@@ -25,7 +25,6 @@ class UsersController < ApplicationController
 
   		logger.debug { ">>> inputParams  #{params.inspect}"  }
     	params.require(:user).permit(:name, :email, :password, :password_confirmation)
-
     end
   
 end
