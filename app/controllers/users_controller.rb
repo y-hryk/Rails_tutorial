@@ -10,11 +10,14 @@ class UsersController < ApplicationController
   	@user = User.new
   end
 
+
+  # ユーザー作成ボタンが押下されたとき
   def create
   	@user = User.new(user_params)
   	if @user.save
-
   	  	logger.debug { ">>> save" }
+
+  		log_in(@user)
         flash[:success] = "Welcome to the Sample App!"
   		redirect_to user_url(@user)
   	else
